@@ -1,119 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="#FFFFFF"
-    android:paddingTop="14dp"
-    android:paddingHorizontal="14dp">
-    <LinearLayout
+    android:background="#FFFFFF">
+    <com.google.android.material.appbar.MaterialToolbar
         android:id="@+id/back_to_main_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="40dp"
-        android:orientation="horizontal">
-        <ImageView
-            android:layout_width="16dp"
-            android:layout_height="16dp"
-            android:backgroundTint="@color/white"
-            android:src="@drawable/button_arrow_back"
-            android:layout_marginStart="4dp"
-            android:layout_marginEnd="28dp"
-            android:layout_gravity="center"/>
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:layout_gravity="start"
-            android:text="@string/settings"
-            android:textColor="@color/black"
-            android:textSize="@dimen/primary_text_size"
-            android:textStyle="bold"/>
-    </LinearLayout>
-    <Switch
+        android:layout_marginBottom="24dp"
+        app:navigationIcon="@drawable/button_arrow_back"
+        app:titleTextAppearance="@style/toolbar_settings"
+        app:title="@string/settings"
+        app:titleTextColor="@color/black"
+        app:contentInsetStartWithNavigation="0dp" />
+    <androidx.appcompat.widget.SwitchCompat
         android:id="@+id/switch1"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/layout_height_in_settings"
+        android:layout_height="61dp"
         android:layout_gravity="center"
         android:text="@string/dark_theme"
         android:textColor="@color/black"
-        android:textSize="@dimen/small_text_size" />
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="61dp"
-        android:orientation="horizontal">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:gravity="start"
-            android:text="@string/share_app"
-            android:textColor="@color/black"
-            android:textSize="@dimen/small_text_size"
-            />
-        <FrameLayout
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:layout_gravity="center">
-            <ImageView
-                android:layout_width="16dp"
-                android:layout_height="18dp"
-                android:layout_gravity="end"
-                android:layout_marginEnd="2dp"
-                android:backgroundTint="@color/white"
-                android:src="@drawable/button_share" />
-        </FrameLayout>
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/layout_height_in_settings"
-        android:orientation="horizontal">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:gravity="start"
-            android:text="@string/write_to_support"
-            android:textColor="@color/black"
-            android:textSize="@dimen/small_text_size"/>
-        <FrameLayout
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:layout_gravity="center">
-            <ImageView
-                android:layout_width="20dp"
-                android:layout_height="18dp"
-                android:layout_gravity="end"
-                android:backgroundTint="@color/white"
-                android:src="@drawable/button_support" />
-        </FrameLayout>
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/layout_height_in_settings"
-        android:orientation="horizontal">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:gravity="start"
-            android:text="@string/user_agreement"
-            android:textColor="@color/black"
-            android:textSize="@dimen/small_text_size"/>
-        <FrameLayout
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:layout_gravity="center">
-            <ImageView
-                android:layout_width="8dp"
-                android:layout_height="14dp"
-                android:layout_gravity="end"
-                android:layout_marginEnd="6dp"
-                android:backgroundTint="@color/white"
-                android:src="@drawable/button_arrow_forward" />
-        </FrameLayout>
-    </LinearLayout>
+        android:textSize="@dimen/small_text_size"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="14dp"/>
+    <com.google.android.material.textview.MaterialTextView
+        style="@style/buttons_in_settings"
+        android:drawableEnd="@drawable/button_share"
+        android:text="@string/share_app"
+        android:paddingEnd="2dp" />
+    <com.google.android.material.textview.MaterialTextView
+        style="@style/buttons_in_settings"
+        android:drawableEnd="@drawable/button_support"
+        android:text="@string/write_to_support" />
+    <com.google.android.material.textview.MaterialTextView
+        style="@style/buttons_in_settings"
+        android:drawableEnd="@drawable/button_arrow_forward"
+        android:text="@string/user_agreement"
+        android:paddingEnd="6dp" />
 </LinearLayout>
